@@ -36,4 +36,5 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(3001, () => console.log("HVAC API server running on port 3001"));
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => console.log(`HVAC API server running on port ${PORT}`));
