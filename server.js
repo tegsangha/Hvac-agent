@@ -2,7 +2,8 @@ import "dotenv/config";
 import Anthropic from "@anthropic-ai/sdk";
 import http from "http";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_KEY });
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_KEY || "" });
+console.log("API Key loaded:", process.env.ANTHROPIC_KEY ? "YES" : "NO - KEY MISSING");
 
 const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
