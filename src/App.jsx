@@ -291,7 +291,7 @@ export default function HVACPro() {
         return { role: m.role, content: m.content };
       });
 
-      const res = await fetch("http://localhost:3001", {
+      const res = await fetch("https://hvac-agent-server.onrender.com", {
         method:"POST",
         headers: { "Content-Type": "application/json", },
         body: JSON.stringify({
